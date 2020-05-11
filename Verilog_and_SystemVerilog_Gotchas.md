@@ -12,7 +12,7 @@ Verilog and SystemVerilog Gotchas
 
 ## Gotcha!
 
-```Verilog
+```SystemVerilog
 module FSM (...);
 
     enum logic [1:0] {WAIT, LOAD, READY} State, nState;
@@ -43,7 +43,7 @@ endmodule: FSM
 
 ## Corrected Version
 
-```Verilog
+```SystemVerilog
 module FSM (...);
 
     enum logic [1:0] {HOLD, LOAD, READY} state_e, nstate_e;
@@ -92,7 +92,7 @@ endmodule: FSM
 
 ## Gotcha!
 
-```Verilog
+```SystemVerilog
 module adder (input  logic a, b, ci,
               output logic sum, co);
     ...
@@ -115,7 +115,7 @@ endmodule
 
 * SystemVerilog에는 _닷-네임(dot-name)_과 _닷-스타(dot-star)_ 단축어가 제공되어 포트 연결 이름의 반복을 줄여준다.
 
-```Verilog
+```SystemVerilog
 module adder (input  logic a, b, ci,
               output logic sum, co);
     ...
