@@ -5,9 +5,9 @@ Verilog and SystemVerilog Gotchas
 
 # Gotcha 1: Case sensitivity
 
-> _Gotcha_: VHDL 모델의 코드에는 문제가 없고 정상적으로 동작하는 것처럼 보이는데, Verilog/SystemVerilog에서는 `undeclared identifier` 에러가 발생한다.
+> *Gotcha*: VHDL 모델의 코드에는 문제가 없고 정상적으로 동작하는 것처럼 보이는데, Verilog/SystemVerilog에서는 `undeclared identifier` 에러가 발생한다.
 >
-> _Synopsys_: Verilog와 SystemVerilog는 **대소문자를 구분하는 언어**지만, VHDL은 **대소문자를 구분하지 않는**다.
+> *Synopsys*: Verilog와 SystemVerilog는 **대소문자를 구분하는 언어**지만, VHDL은 **대소문자를 구분하지 않는**다.
 
 
 ## Gotcha!
@@ -63,9 +63,9 @@ endmodule: FSM
 
 ## Gotcha 2: Implicit net declarations
 
-> _Gotcha_: 설계에서 커넥션에 있는 오타(typo)가 컴파일러로 잡히지 않았고, 시뮬레이션에서 기능 문제로만 확인된다.
+> *Gotcha*: 설계에서 커넥션에 있는 오타(typo)가 컴파일러로 잡히지 않았고, 시뮬레이션에서 기능 문제로만 확인된다.
 >
-> _Synopsys_: 잘못 타이핑 된 식별자(identifier)에 대해 문법 오류(syntax error)가 나타나는 대신 암묵적 넷(implicit net) 이 삽입될 수 있다.
+> *Synopsys*: 잘못 타이핑 된 식별자(identifier)에 대해 문법 오류(syntax error)가 나타나는 대신 암묵적 넷(implicit net) 이 삽입될 수 있다.
 
 미선언 식별자(undeclared identifier)가 삽입되면 어떻게 사용되느냐에 따라 Verilog/SystemVerilog 툴이 다르게 동작한다.
 
@@ -87,7 +87,7 @@ endmodule: FSM
     assign bar = foo;       // GOTCHA: bar not declared, but no error
     ```
 
-* 미선언 식별자가 모듈의 인스턴스, 인터페이스(interface), 프로그램(program), 또는 프리미티브(primitive)의 커넥션에 사용되면 _암묵적 넷이 삽입되고, 에러나 경고라 리포트 되지 않는다_.
+* 미선언 식별자가 모듈의 인스턴스, 인터페이스(interface), 프로그램(program), 또는 프리미티브(primitive)의 커넥션에 사용되면 *암묵적 넷이 삽입되고, 에러나 경고라 리포트 되지 않는다*.
 
 
 ## Gotcha!
@@ -113,7 +113,7 @@ endmodule
 
 ## How To Avoid This Gotcha Using SystemVerilog
 
-* SystemVerilog에는 _닷-네임(dot-name)_과 _닷-스타(dot-star)_ 단축어가 제공되어 포트 연결 이름의 반복을 줄여준다.
+* SystemVerilog에는 *닷-네임(dot-name)*과 *닷-스타(dot-star)* 단축어가 제공되어 포트 연결 이름의 반복을 줄여준다.
 
 ```SystemVerilog
 module adder (input  logic a, b, ci,
