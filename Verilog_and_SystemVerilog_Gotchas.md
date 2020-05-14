@@ -70,19 +70,19 @@ endmodule: FSM
 미선언 식별자(undeclared identifier)가 삽입되면 어떻게 사용되느냐에 따라 Verilog/SystemVerilog 툴이 다르게 동작한다.
 
 * 미선언 식별자가 오른쪽 또는 절차적 할당문(procedure assignment statement)의 좌변에 사용되면 컴파일 에러가 발생한다.
-    ```Verilog
+    ```SystemVerilog
     logic [7:0] foo;
     initial foo = bar;      // ERROR: bar not declared
     ```
 
 * 미선언 식별자가 연속적 할당문(continuous assignment statement)의 우변에 사용되면 컴파일 에러가 발생한다.
-    ```Verilog
+    ```SystemVerilog
     logic [7:0] foo;
     assign foo = bar        // ERROR: bar not declared
     ```
 
-* 미선언 식별자가 연속적 할당문의 좌변에 사용되면 _암묵적 넷 선언이 삽입되고, 에러나 경고가 리포트 되지 않는다_.
-    ```Verilog
+* 미선언 식별자가 연속적 할당문의 좌변에 사용되면 *암묵적 넷 선언이 삽입되고, 에러나 경고가 리포트 되지 않는다*.
+    ```SystemVerilog
     logic [7:0] foo;
     assign bar = foo;       // GOTCHA: bar not declared, but no error
     ```
