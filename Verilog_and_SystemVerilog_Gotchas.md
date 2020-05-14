@@ -113,7 +113,7 @@ endmodule
 
 ## How To Avoid This Gotcha Using SystemVerilog
 
-* SystemVerilog에는 *닷-네임(dot-name)*과 *닷-스타(dot-star)* 단축어가 제공되어 포트 연결 이름의 반복을 줄여준다.
+* SystemVerilog에는 <em>닷-네임(dot-name)</em>과 *닷-스타(dot-star)* 단축어가 제공되어 포트 연결 이름의 반복을 줄여준다.
 
 ```SystemVerilog
 module adder (input  logic a, b, ci,
